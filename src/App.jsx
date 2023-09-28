@@ -39,19 +39,19 @@ const App = () => {
                 </div>
             </div>
             {/* add timeline modal */}
-            <div className='card m-2' style={{ width: "18rem" }}>
+            <div className='card m-2' style={{ width: "18rem", left: "2rem" }}>
                 <div className='card-body'>
                     <h5 className="card-title">Spongebob</h5>
                     <p className="card-text">Is mayonaise an instrument?</p>
                 </div>
             </div>
-            <div className='card m-2' style={{ width: "18rem" }}>
+            <div className='card m-2' style={{ width: "18rem", left: "2rem" }}>
                 <div className='card-body'>
                     <h5 className="card-title">Patrick</h5>
                     <p className="card-text">@Squidward I wanna know if horseraddish is an instrument, too!</p>
                 </div>
             </div>
-            <div className='card m-2' style={{ width: "18rem" }}>
+            <div className='card m-2' style={{ width: "18rem", left: "2rem" }}>
                 <div className='card-body'>
                     <h5 className="card-title">Squidward</h5>
                     <p className="card-text">Shut the hell up you guys....</p>
@@ -59,11 +59,10 @@ const App = () => {
             </div>
             {timeline.map((val) =>
             (
-                <div className='card m-2' style={{ width: "18rem" }}>
+                <div className='card m-2' style={{ width: "18rem", left: "2rem" }}>
                     <div className='card-body'>
                         <h5 className="card-title">{val.user}</h5>
                         <p className="card-text">{val.msg}</p>
-                        <small>{val.id}</small>
                     </div>
                 </div>
             )
