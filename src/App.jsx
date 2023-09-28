@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import uuid from 'react-uuid';
 
 const App = () => {
 
@@ -20,7 +21,7 @@ const App = () => {
         setTimeline( // replace the state
             [ // with a new array
                 ...timeline, // that contains all the old items
-                { user: userName, msg: chirp } // and one new item at the end
+                { user: userName, msg: chirp, id: uuid() } // and one new item at the end
             ]
         )
     };
@@ -56,12 +57,13 @@ const App = () => {
                     <p className="card-text">Shut the hell up you guys....</p>
                 </div>
             </div>
-            {timeline.map((val, index) =>
+            {timeline.map((val) =>
             (
                 <div className='card m-2' style={{ width: "18rem" }}>
                     <div className='card-body'>
                         <h5 className="card-title">{val.user}</h5>
                         <p className="card-text">{val.msg}</p>
+                        <small>{val.id}</small>
                     </div>
                 </div>
             )
