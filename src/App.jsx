@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import uuid from 'react-uuid';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 const App = () => {
 
@@ -18,10 +20,11 @@ const App = () => {
 
     // handle new chirps
     const handleAddChirp2Array = () => {
+        const dateToFormat = Date.now();
         setTimeline( // replace the state
             [ // with a new array
                 ...timeline, // that contains all the old items
-                { user: userName, msg: chirp, id: uuid() } // and one new item at the end
+                { user: userName, msg: chirp, id: uuid(), timestamp:  <Moment format="MM/DD/YYYY hh:mm:ss" date={dateToFormat}  />} // and one new item at the end
             ]
         )
     };
@@ -63,6 +66,7 @@ const App = () => {
                     <div className='card-body'>
                         <h5 className="card-title">{val.user}</h5>
                         <p className="card-text">{val.msg}</p>
+                        <small>{val.timestamp}</small>
                     </div>
                 </div>
             )
